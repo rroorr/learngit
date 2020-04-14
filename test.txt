@@ -5,3 +5,4 @@ line 4
 line 5
 add a new line to test the diff cmd
 test diff head
+abc
