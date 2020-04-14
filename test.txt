@@ -1,3 +1,1 @@
-Git is a distributed version control system
-I just started to use it
-this is the third change
+line 1
