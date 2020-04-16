@@ -1,3 +1,4 @@
+
 ===================== 基本操作 ==========================
 
 mkdir 目录名    创建目录
@@ -40,5 +41,66 @@ git restore --staged file.txt （等价于原 git reset HEAD file.txt 命令）
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，用git reset --hard 版本号
 
 
-========================= 文件删除：========================
+======================= 版本库中文件删除：======================
+
+如果文件已经提交到版本库，那么在widonws的文件夹中删掉的文件，总是能够通过git restore 以及 
+git restore --staged 命令把文件找回来。想要真正在版本库中把文件删掉，需要用 git rm 指令，
+然后再commit，注意必须用git rm删除，在windows文件夹里删是不行的：
+$ git rm file.txt
+$ git commit -m "delete file.txt"
+即使是这样，也只是从当前版本中删除了file.txt，其他版本中这个文件还是在的
+
+
+======================== 远程仓库 ==============================
+
+1） 先有本地仓库，后有远程仓库：
+
+把当前仓库关联一个远程库
+$ git remote add origin git@server-name:path/repo-name.git
+具体到github，就是：
+$ git remote add origin git@github.com:user-name/repo-name.git
+
+关联后，使用命令 
+git push -u origin master 第一次推送master分支的所有内容
+
+以后每次本地提交后，可以使用
+git push origin master 推送最新修改
+
+2） 先有远程仓库，然后把远程仓库克隆到本地
+
+首先在服务器上建立git仓库，然后克隆本地库：
+$ git clone git@github.com:user-name/repo-name.git
+
+若多人协作开发，则每个人各自从远程克隆一份就可以了。
+
+Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。使用https除了速度慢以外，
+还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议
+而只能用https。
+
+
+========================= 分支 =================================
+
+创建分支：
+git checkout -b branch-name  		创建branch-name分支，然后切换到该分支
+git switch -c branch-name（推荐）	创建branch-name分支，并切换到该分支
+
+等价于以下两条命令：
+$ git branch branch-name		创建分支
+$ git switch branch-name		切换到新创建的分支，switch用于替代老版本的checkout
+
+git branch 					查看当前分支。会列出所有分支，在当前分支前面会标一个*号
+git checkout branch-name 	切换到指定分支（branch-name分支）
+git merge branch-name		把指定分支（branch-name分支）合并到当前分支上
+git branch -d branch-name	删除指定分支（branch-name分支）
+
+
+
+
+
+
+
+
+
+
+
 
