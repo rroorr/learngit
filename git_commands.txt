@@ -20,24 +20,24 @@ git reflog 查询命令历史，包括commit、checkout、reset等，能查到�
 q 	返回。当提示“No next tag (press RETURN)”时候，只需要输入q即可返回
 
 
-git diff是比较工作区与暂存区的区别；
-git diff --cached是比较暂存区与版本库的区别
-git diff HEAD 查看工作区和版本库里最新版本的差异
+git diff 			比较工作区与暂存区的区别，可以后跟文件名指定要比较的文件，否则比较所有文件
+git diff --cached	比较暂存区与版本库的区别，可以后跟文件名指定要比较的文件，否则比较所有文件
+git diff HEAD 		查看工作区和版本库里最新版本的差异，可以后跟文件名指定要比较的文件，否则比较所有文件
 
 
 关于撤销修改的命令：
-git checkout -- file.txt（用git restore 代替）	
+git restore file.txt（等价于原 git checkout -- file.txt 命令）	
 			把文件在工作区的修改全部撤销。
 			1）如果暂存区有版本，则用暂存区里的版本替换工作区的版本
 			2）如果暂存区没有版本，则用版本库里的版本替换工作区的版本。注意 -- 前后都有空格；
 			如果修改已经提交到暂存区，则无法撤销修改，只能撤销上次add之后的修改
 
-git reset HEAD file.txt（用git restore --staged 代替）		
-			把暂存区的修改撤销掉，暂存区回到add之前的状态，但工作区不受影响
+git restore --staged file.txt （等价于原 git reset HEAD file.txt 命令）		
+			用版本库中的版本替换暂存区中的版本，工作区不受影响
 
 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git restore file.txt
 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，
-第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
+第一步用命令git restore --staged file.txt，就回到了场景1，第二步按场景1操作。
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，用git reset --hard 版本号
 
 
