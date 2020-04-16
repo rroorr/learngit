@@ -1,3 +1,5 @@
+===================== 基本操作 ==========================
+
 mkdir 目录名    创建目录
 cd 目录名   	切换到目录
 pwd  			显示当前目录
@@ -7,10 +9,7 @@ git add	file1.txt file2.txt	把file1.txt和file2.txt添加到暂存区
 git commit -m "注释"	把暂存区文件提交到仓库
 
 
-git add的反向命令git checkout，撤销工作区修改，即把暂存区最新版本转移到工作区，
-git commit的反向命令git reset HEAD，就是把仓库最新版本转移到暂存区
-
-版本回退：
+====================== 版本回退：=========================
 git reset --hard HEAD^
 git reset --hard HEAD^^
 git reset --hard HEAD~100
@@ -25,7 +24,7 @@ git diff --cached	比较暂存区与版本库的区别，可以后跟文件名�
 git diff HEAD 		查看工作区和版本库里最新版本的差异，可以后跟文件名指定要比较的文件，否则比较所有文件
 
 
-关于撤销修改的命令：
+关于撤销修改的命令（工作区文件被删除的情况等同于工作区文件被修改）：
 git restore file.txt（等价于原 git checkout -- file.txt 命令）	
 			把文件在工作区的修改全部撤销。
 			1）如果暂存区有版本，则用暂存区里的版本替换工作区的版本
@@ -40,4 +39,6 @@ git restore --staged file.txt （等价于原 git reset HEAD file.txt 命令）
 第一步用命令git restore --staged file.txt，就回到了场景1，第二步按场景1操作。
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，用git reset --hard 版本号
 
+
+========================= 文件删除：========================
 
