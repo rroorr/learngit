@@ -1,8 +1,30 @@
+mkdir 目录名    创建目录
+cd 目录名   	切换到目录
+pwd  			显示当前目录
+
+git init 			把当前目录变成Git仓库
+git add	file1.txt file2.txt	把file1.txt和file2.txt添加到暂存区	
+git commit -m "注释"	把暂存区文件提交到仓库
+
+
 git add的反向命令git checkout，撤销工作区修改，即把暂存区最新版本转移到工作区，
 git commit的反向命令git reset HEAD，就是把仓库最新版本转移到暂存区
 
+版本回退：
+git reset --hard HEAD^
+git reset --hard HEAD^^
+git reset --hard HEAD~100
+git reset --hard 版本号
+
+git reflog 查询命令历史，包括commit、checkout、reset等，能查到每次提交的commit_id
+q 	返回。当提示“No next tag (press RETURN)”时候，只需要输入q即可返回
 
 
 git diff是比较工作区与暂存区的区别；
 git diff --cached是比较暂存区与版本库的区别
 git diff HEAD 查看工作区和仓库的差异
+
+git diff比较的是工作目录中当前文件和暂存区域快照之间的差异， 也就是修改之后还没有暂存起来的变化内容。
+若要查看已暂存的将要添加到下次提交里的内容，可以用 git diff --cached 命令。
+请注意，git diff 本身只显示尚未暂存的改动，而不是自上次提交以来所做的所有改动。 
+所以有时候你一下子暂存了所有更新过的文件后，运行 git diff 后却什么也没有，就是这个原因。
