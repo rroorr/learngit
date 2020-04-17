@@ -77,7 +77,7 @@ $ git merge tmp		合并temp分支到master分支
 
 首先在服务器上建立git仓库，然后克隆本地库：
 $ git clone git@github.com:user-name/repo-name.git
-以是使用ssh协议，如果失败，可以尝试 https协议
+以上是使用ssh协议，如果失败，可以尝试 https协议
 $ git clone https://github.com/user-name/repo-name.git
 
 若多人协作开发，则每个人各自从远程克隆一份就可以了。
