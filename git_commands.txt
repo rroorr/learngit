@@ -15,6 +15,7 @@ git reset --hard HEAD^
 git reset --hard HEAD^^
 git reset --hard HEAD~100
 git reset --hard 版本号
+git reset --soft 版本号
 
 git reflog 查询命令历史，包括commit、checkout、reset等，能查到每次提交的commit_id
 q 	返回。当提示“No next tag (press RETURN)”时候，只需要输入q即可返回
@@ -64,7 +65,8 @@ $ git remote add origin git@github.com:user-name/repo-name.git
 git push -u origin master 第一次推送master分支的所有内容
 
 以后每次本地提交后，可以使用
-git push origin master 推送最新修改
+git push origin master 			推送master分支最新修改
+git push origin dev:dev_remote 	把dev分支推送到服务器，并命名服务器端为dev_remote分支
 
 git pull origin master 	从远程获取最新版本并merge到本地
 git pull 相当于 git fetch 和 git merge，如果分开进行，则可以用下面命令：
@@ -104,10 +106,20 @@ git switch -c branch-name（推荐）	创建branch-name分支，并切换到该�
 $ git branch branch-name		创建分支
 $ git switch branch-name		切换到新创建的分支，switch用于替代老版本的checkout
 
-git branch 					查看当前分支。会列出所有分支，在当前分支前面会标一个*号
-git switch branch-name 		切换到指定分支（branch-name分支），替换原命令 git checkout branch-name
-git merge branch-name		把指定分支（branch-name分支）合并到当前分支上
-git branch -d branch-name	删除指定分支（branch-name分支）
+git branch 						查看所有本地分支。会列出所有本地分支，在当前分支前面会标一个*号
+git branch -r					查看所有远程分支
+git branch -a					查看所有分支，包括远程分支和本地分支
+
+git switch branch-name 			切换到指定分支（branch-name分支），替换原命令 git checkout branch-name
+git merge branch-name			把指定分支（branch-name分支）合并到当前分支上
+
+git branch -d branch-name		删除指定分支（branch-name分支）
+git branch -D branch-name		强制删除本地分支，-D相当于--delete --force
+git push origin --delete dev	删除远程dev分支
+
+git branch -m old_name new_name		分支改名
+git branch -M old_name new_name		强制改名
+
 
 
 
