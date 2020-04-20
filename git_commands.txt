@@ -120,6 +120,9 @@ git push origin --delete dev	删除远程dev分支
 git branch -m old_name new_name		分支改名
 git branch -M old_name new_name		强制改名
 
+git cherry-pick	commit-number	把序号为commit-number的提交复制到当前分支，也可以一次复制多个提交
+								注意在使用前，必须确保当前分支的修改已经提交
+
 
 
 
