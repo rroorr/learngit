@@ -1,2 +1,4 @@
 this is line 1 at branch dev
 this is line 2 at branch dev
+
+this is line 3 added at branch master
