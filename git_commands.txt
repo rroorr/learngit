@@ -123,6 +123,27 @@ git branch -M old_name new_name		强制改名
 git cherry-pick	commit-number	把序号为commit-number的提交复制到当前分支，也可以一次复制多个提交
 								注意在使用前，必须确保当前分支的修改已经提交
 
+========================== 存储工作区  =============================
+
+t stash					把当前工作区暂存起来，工作区未add和commit的修改会被保存起来，然后工作区文件变成
+							与当前分支的最新commit一致
+git stash save "注释"		同git stash，增加注释以方便恢复时辨认stash版本
+git stash pop				将堆栈顶端的stash应用到当前目录，并删除这个stash
+git stash apply				将堆栈顶端的stash应用到当前目录，并保留这个stash
+git stash apply stash@{0}	将序号{0}的stash应用到当前目录，并保留这个stash
+git stash list				列出所有stash
+git stash drop	stash@{0}	删除序号{0}的stash		
+git stash clear				删除所有stash		
+
+备注：默认情况下，git stash会跟踪以下文件：
+1）添加到暂存区的修改（staged changes）
+2）Git跟踪的但并未添加到暂存区的修改（unstaged changes）
+但不会缓存以下文件：
+1）在工作目录中新的文件（untracked files）
+2）忽略的文件（ignored files）
+git stash命令提供了参数用于缓存上面两种类型的文件。使用-u或者--include-untracked可以stash untracked文件。使用-a或者--all命令可以stash当前目录下的所有修改。
+至于git stash的其他命令建议参考Git manual。
+
 
 
 
