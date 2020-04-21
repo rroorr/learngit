@@ -86,7 +86,7 @@ $ git clone https://github.com/user-name/repo-name.git
 
 Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。使用https除了速度慢以外，
 还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议
-而只能用https。
+而只能用https
 
 
 $ git remote -v  查看当前的协议
