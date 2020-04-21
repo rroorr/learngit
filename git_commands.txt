@@ -89,7 +89,7 @@ Git支持多种协议，默认的git://使用ssh，但也可以使用https等其
 而只能用https
 
 
-$ git remote -v  查看当前的协议
+$ git remote -v  查看远程仓库，以及仓库的协议
 origin  git@github.com:rroorr/learngit.git (fetch)
 origin  git@github.com:rroorr/learngit.git (push)
 切换成https协议：
@@ -119,8 +119,13 @@ git push origin --delete dev	删除远程dev分支
 git branch -m old_name new_name		分支改名
 git branch -M old_name new_name		强制改名
 
-git cherry-pick	commit-number	把序号为commit-number的提交复制到当前分支，也可以一次复制多个提交
-								注意在使用前，必须确保当前分支的修改已经提交
+git cherry-pick	commit-number	把序号为commit-number的提交的修改复制到当前分支，也可以一次复制多个提交
+								注意：在使用前，必须确保当前分支的修改已经提交。
+								注意：会自动产生一个提交，这个提交与commit-number提交并不相同，
+								而只是把这个提交所做的改动复制过来
+
+把本地非master分支与远程分支建立关联：
+								
 								
 
 ==========================  存储工作区  =============================
@@ -131,7 +136,7 @@ git stash save "注释"		同git stash，增加注释以方便恢复时辨认stas
 git stash pop				将堆栈顶端的stash应用到当前目录，并删除这个stash
 git stash apply				将堆栈顶端的stash应用到当前目录，并保留这个stash
 git stash apply stash@{0}	将序号{0}的stash应用到当前目录，并保留这个stash
-git stash list				列出所有stash
+git stash list				列出所有stash及其序号
 git stash drop	stash@{0}	删除序号{0}的stash		
 git stash clear				删除所有stash		
 
@@ -143,6 +148,11 @@ git stash clear				删除所有stash
 2）忽略的文件（ignored files）
 git stash命令提供了参数用于缓存上面两种类型的文件。使用-u或者--include-untracked可以stash untracked文件。
 使用-a或者--all命令可以stash当前目录下的所有修改
+
+如果刚刚提交，工作区是干净的，那么stash就不会成功，提示"no local changes to save"，而这种情况也没有stash的必要
+
+注意：使用stash之后，当前分支的工作区和暂存区都会被清空（跑到stash中去了），如果此时再stash drop或者stash clear
+删除stash的话，会丢失未保存的修改！！
 
 ======================================================================
 
