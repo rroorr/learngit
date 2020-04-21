@@ -95,7 +95,6 @@ origin  git@github.com:rroorr/learngit.git (push)
 切换成https协议：
 $ git remote set-url origin https://github.com/rroorr/learngit.git
 
-
 ========================= 分支 =================================
 
 创建分支：
@@ -122,6 +121,7 @@ git branch -M old_name new_name		强制改名
 
 git cherry-pick	commit-number	把序号为commit-number的提交复制到当前分支，也可以一次复制多个提交
 								注意在使用前，必须确保当前分支的修改已经提交
+								
 
 ========================== 存储工作区  =============================
 
@@ -142,9 +142,9 @@ git stash clear				删除所有stash
 1）在工作目录中新的文件（untracked files）
 2）忽略的文件（ignored files）
 git stash命令提供了参数用于缓存上面两种类型的文件。使用-u或者--include-untracked可以stash untracked文件。使用-a或者--all命令可以stash当前目录下的所有修改。
-至于git stash的其他命令建议参考Git manual。
+至于git stash的其他命令建议参考Git manual
 
-
+======================================================================
 
 
 
