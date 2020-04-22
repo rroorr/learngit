@@ -68,19 +68,26 @@ git push -u origin master 第一次推送master分支的所有内容
 git push origin master 			推送master分支最新修改
 git push origin dev:dev_remote 	把dev分支推送到服务器，并命名服务器端为dev_remote分支
 
-git pull origin master 	从远程获取最新版本并merge到本地
-git pull 相当于 git fetch 和 git merge，如果分开进行，则可以用下面命令：
-$ git fetch origin master:tmp 从远程的origin仓库的master分支下载到本地并新建一个分支temp
-$ git diff tmp 		比较master分支和temp分支的不同
-$ git merge tmp		合并temp分支到master分支
+git pull origin master 			从远程获取最新版本并merge到本地
+git pull 						相当于 git fetch 和 git merge，如果分开进行，则可以用下面命令：
+$ git fetch origin master:tmp 	从远程的origin仓库的master分支下载到本地并新建一个分支temp。
+								注意tmp不是一个track branch
+								
+$ git diff tmp 					比较master分支和temp分支的不同
+$ git merge tmp					合并temp分支到master分支
 
 
 2） 先有远程仓库，然后把远程仓库克隆到本地
 
 首先在服务器上建立git仓库，然后克隆本地库：
 $ git clone git@github.com:user-name/repo-name.git
-以上是使用ssh协议，如果失败，可以尝试 https协议
+也可以使用：
+$ git clone git://github.com/rroorr/learngit.git
+以上是使用ssh协议，如果失败，可以尝试 https协议：
 $ git clone https://github.com/user-name/repo-name.git
+
+克隆注意：每个目录只能克隆一次，克隆到本地之后，默认只有master分支。如果想把其他远程分支也复制到
+本地，只需要切换分支即可：git switch dev 或者 git checkout dev
 
 若多人协作开发，则每个人各自从远程克隆一份就可以了。
 
@@ -125,7 +132,9 @@ git cherry-pick	commit-number	把序号为commit-number的提交的修改复制�
 
 把本地非master分支与远程分支建立关联：
 								
-								
+必须使用git init命令创建仓库，执行git add . 和git commit（提交成功后）,再使用git branch命令，
+才显示出本地分支因为git的分支必须指向一个commit，没有任何commit就没有任何分支,提交第一个
+commit后git自动创建master分支							
 
 ==========================  存储工作区  =============================
 
