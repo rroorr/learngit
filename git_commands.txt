@@ -88,8 +88,7 @@ Git支持多种协议，默认的git://使用ssh，但也可以使用https等其
 还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议
 而只能用https
 
-
-$ git remote -v  查看远程仓库，以及仓库的协议
+$ git remote -v  查看远程仓库，以及仓库的协议，运行后可以看到：
 origin  git@github.com:rroorr/learngit.git (fetch)
 origin  git@github.com:rroorr/learngit.git (push)
 切换成https协议：
