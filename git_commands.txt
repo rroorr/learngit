@@ -7,12 +7,18 @@ pwd  			显示当前目录
 
 git init 						把当前目录变成Git仓库
 git add	file1.txt file2.txt		把file1.txt和file2.txt添加到暂存区	
-git add .						把当前目录所有文件添加到暂存区，注意"."前面有空格
-git add -u .					添加已跟踪的文件，注意"."前面有空格
-git add -A .					添加已跟踪和未跟踪的文件，注意"."前面有空格
+git add .						把当前目录所有文件以及文件夹（含文件夹里的文件）添加到暂存区，注意"."前面有空格
+								注意不包括删除
+								
+git add *						同 git add .
+git add -u .					将已跟踪文件中的修改和删除的文件添加到暂存区，不包括新增加的文件，注意"."前面有空格
+git add -A .					表示将所有的已跟踪的文件的修改与删除和新增的未跟踪的文件都添加到暂存区，
+								注意"."前面有空格
+								
 git add 文件夹					把指定的文件夹添加到暂存区
 git reset HEAD +				取消添加
-git commit -m "注释"	把暂存区文件提交到仓库
+
+git commit -m "注释"			把暂存区文件提交到仓库
 
 
 ====================== 版本回退：=========================
@@ -109,6 +115,16 @@ origin  git@github.com:rroorr/learngit.git (fetch)
 origin  git@github.com:rroorr/learngit.git (push)
 切换成https协议：
 $ git remote set-url origin https://github.com/rroorr/learngit.git
+
+冲突：
+1） 如果push失败，因为其他人的最新提交和你试图推送的提交有冲突，解决办法是先用git pull把最新的提交从origin/dev抓下来，
+然后，在本地合并，解决冲突，再推送。
+2） 如果pull也失败，提示
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+说明没有指定本地dev分支与远程分支origin/dev分支的链接关系，用以下命令建立二者之间链接：
+$ git branch --set-upstream-to=origin/dev dev
 
 ========================= 分支 =================================
 
