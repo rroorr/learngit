@@ -5,8 +5,13 @@ mkdir 目录名    创建目录
 cd 目录名   	切换到目录
 pwd  			显示当前目录
 
-git init 			把当前目录变成Git仓库
-git add	file1.txt file2.txt	把file1.txt和file2.txt添加到暂存区	
+git init 						把当前目录变成Git仓库
+git add	file1.txt file2.txt		把file1.txt和file2.txt添加到暂存区	
+git add .						把当前目录所有文件添加到暂存区，注意"."前面有空格
+git add -u .					添加已跟踪的文件，注意"."前面有空格
+git add -A .					添加已跟踪和未跟踪的文件，注意"."前面有空格
+git add 文件夹					把指定的文件夹添加到暂存区
+git reset HEAD +				取消添加
 git commit -m "注释"	把暂存区文件提交到仓库
 
 
@@ -142,7 +147,7 @@ commit后git自动创建master分支
 
 ==========================  存储工作区  =============================
 
-t stash					把当前工作区暂存起来，工作区未add和commit的修改会被保存起来，然后工作区文件变成
+git stash					把当前工作区暂存起来，工作区未add和commit的修改会被保存起来，然后工作区文件变成
 							与当前分支的最新commit一致
 git stash save "注释"		同git stash，增加注释以方便恢复时辨认stash版本
 git stash pop				将堆栈顶端的stash应用到当前目录，并删除这个stash
