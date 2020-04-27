@@ -1,3 +1,9 @@
+
 line 1 in dev to test rebase
 line 2 in dev to test rebase
 line 3 in dev to test rebase
+
+commit 1 in feature to test rebase
+commit 2 in feature to test rebase
+commit 3 in feature to test rebase
+
