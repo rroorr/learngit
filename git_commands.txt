@@ -189,8 +189,9 @@ git stash命令提供了参数用于缓存上面两种类型的文件。使用-u
 
 ======================================================================
 
-
-
+如果看到如下界面，可以按 Ctrl+X 退出
+^G Get Help      ^O Write Out     ^W Where Is      ^K Cut Text      ^J Justify       ^C Cur Pos       ^Y Prev Page     M-\ First Line   M-W WhereIs Next
+^X Exit          ^R Read File     ^\ Replace       ^U Uncut Text    ^T To Spell      ^_ Go To Line    ^V Next Page     M-/ Last Line    M-] To Bracket
 
 
 
