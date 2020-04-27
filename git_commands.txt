@@ -85,6 +85,7 @@ git push -u origin master 第一次推送master分支的所有内容
 以后每次本地提交后，可以使用
 git push origin master 			推送master分支最新修改
 git push origin dev:dev_remote 	把dev分支推送到服务器，并命名服务器端为dev_remote分支
+git push --all origin 			推送所有本地分支到远程 
 
 git pull origin master 			从远程获取最新版本并merge到本地
 git pull 						相当于 git fetch 和 git merge，如果分开进行，则可以用下面命令：
