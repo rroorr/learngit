@@ -194,5 +194,7 @@ git stash命令提供了参数用于缓存上面两种类型的文件。使用-u
 ^X Exit          ^R Read File     ^\ Replace       ^U Uncut Text    ^T To Spell      ^_ Go To Line    ^V Next Page     M-/ Last Line    M-] To Bracket
 
 
+在使用git log查看提交之后，需要按 q 退出
+
 
 
