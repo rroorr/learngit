@@ -31,6 +31,13 @@ git reset --soft 版本号
 git reflog 查询命令历史，包括commit、checkout、reset等，能查到每次提交的commit_id
 q 	返回。当提示“No next tag (press RETURN)”时候，只需要输入q即可返回
 
+git log				查看提交历史。可以加很多参数，比较有用的包括：
+					--all 		查看所有分支的提交历史
+					--oneline  	每次提交以一行显示
+					--graph		以图形化方式显示分支
+					
+git log origin/master 	查看远程分支的提交历史，如果加上 --all, 则查看所有远程分支，不管写的是master还是其他
+		
 
 git diff 			比较工作区与暂存区的区别，可以后跟文件名指定要比较的文件，否则比较所有文件
 git diff --cached	比较暂存区与版本库的区别，可以后跟文件名指定要比较的文件，否则比较所有文件
