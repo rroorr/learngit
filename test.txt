@@ -1,15 +1,2 @@
-this is feature branch
-
-this is dev branch
-
-feature branch commit2
-
-
-modification in dev
-
-modification 2 in dev branch
-
-
-
-this is on master branch
+branch dev 1
 
