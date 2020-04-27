@@ -1,1 +1,2 @@
 line 1 in dev to test rebase
+line 2 in dev to test rebase
