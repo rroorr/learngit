@@ -89,7 +89,6 @@ git push --all origin 			推送所有本地分支到远程
 git push origin <本地分支名>:<远程分支名>	将本地当前分支 推送到 远程指定分支上（注意：pull是远程在前本地在后，push相反）
 git push origin <本地分支名>				将本地当前分支 推送到 与本地当前分支同名的远程分支上（注意：pull是远程在前本地在后，push相反）
 
-a
 
 git pull origin master 							从远程获取最新版本并merge到本地当前分支
 git pull origin <远程分支名称>:<本地分支名称>	将远程指定分支 拉取到 本地指定分支上
