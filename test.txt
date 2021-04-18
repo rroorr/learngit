@@ -1,15 +1,3 @@
-this is feature branch
-
-this is dev branch
-
-feature branch commit2
-
-
-modification in dev
-
-modification 2 in dev branch
-
-
-
-this is on master branch
-
+line 1 in dev to test rebase
+line 2 in dev to test rebase
+line 3 in dev to test rebase
