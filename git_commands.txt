@@ -86,12 +86,16 @@ git push -u origin master 第一次推送master分支的所有内容
 git push origin master 			推送master分支最新修改
 git push origin dev:dev_remote 	把dev分支推送到服务器，并命名服务器端为dev_remote分支
 git push --all origin 			推送所有本地分支到远程 
+git push origin <本地分支名>:<远程分支名>	将本地当前分支 推送到 远程指定分支上（注意：pull是远程在前本地在后，push相反）
+git push origin <本地分支名>				将本地当前分支 推送到 与本地当前分支同名的远程分支上（注意：pull是远程在前本地在后，push相反）
+
+a
 
 git pull origin master 							从远程获取最新版本并merge到本地当前分支
 git pull origin <远程分支名称>:<本地分支名称>	将远程指定分支 拉取到 本地指定分支上
 git pull origin <远程分支名称>					将远程指定分支 拉取到 本地当前分支上
 git pull 						相当于 git fetch 和 git merge，如果分开进行，则可以用下面命令：
-$ git fetch origin master:tmp 	从远程的origin仓库的master分支下载到本地并新建一个分支temp。
+$ git fetch origin master:tmp 	从远程的origin仓库的master分支下载到本地并新建一个分支temp
 								注意tmp不是一个track branch
 								
 $ git diff tmp 					比较master分支和temp分支的不同
