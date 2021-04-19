@@ -138,6 +138,7 @@ There is no tracking information for the current branch.
 Please specify which branch you want to merge with.
 说明没有指定本地dev分支与远程分支origin/dev分支的链接关系，用以下命令建立二者之间链接：
 $ git branch --set-upstream-to=origin/dev dev
+git branch --set-upstream-to=origin/<远程分支名称>  <本地分支名称>
 
 ========================= 分支 =================================
 
@@ -172,7 +173,10 @@ git cherry-pick	commit-number	把序号为commit-number的提交的修改复制�
 								
 必须使用git init命令创建仓库，执行git add . 和git commit（提交成功后）,再使用git branch命令，
 才显示出本地分支因为git的分支必须指向一个commit，没有任何commit就没有任何分支,提交第一个
-commit后git自动创建master分支							
+commit后git自动创建master分支		
+
+git merge		用于合并指定分支到当前分支	
+				
 
 ==========================  存储工作区  =============================
 
