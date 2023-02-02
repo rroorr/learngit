@@ -20,8 +20,7 @@ git reset HEAD +				取消添加
 
 git commit -m "注释"			把暂存区文件提交到仓库
 
-======================
- 版本回退：=========================
+====================== 版本回退：=========================
 git reset --hard HEAD^
 git reset --hard HEAD^^
 git reset --hard HEAD~100
@@ -112,6 +111,8 @@ $ git clone https://github.com/user-name/repo-name.git
 
 克隆注意：每个目录只能克隆一次，克隆到本地之后，默认只有master分支。如果想把其他远程分支也复制到
 本地，只需要切换分支即可：git switch dev 或者 git checkout dev
+
+或者： git checkout -b dev origin/dev
 
 如果git pull失败，提示There is no tracking information for the current branch，那么可以指定本地dev分支与
 远程origin/dev分支的链接，用以下命令：
