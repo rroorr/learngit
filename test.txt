@@ -3,8 +3,5 @@ line 2 in dev to test rebase
 line 3 in dev to test rebase
 
 
-
-test a line in branch master1
-
-test a line in branch dev1
+develop branch
 
