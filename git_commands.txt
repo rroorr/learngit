@@ -45,13 +45,13 @@ git diff HEAD 		查看工作区和版本库里最新版本的差异，可以后�
 
 关于撤销修改的命令（工作区文件被删除的情况等同于工作区文件被修改）：
 git restore file.txt（等价于原 git checkout -- file.txt 命令）	
-			把文件在工作区的修改全部撤销。
-			1）如果暂存区有版本，则用暂存区里的版本替换工作区的版本
-			2）如果暂存区没有版本，则用版本库里的版本替换工作区的版本。注意 -- 前后都有空格；
-			如果修改已经提交到暂存区，则无法撤销修改，只能撤销上次add之后的修改
+            把文件在工作区的修改全部撤销。
+            1）如果暂存区有版本，则用暂存区里的版本替换工作区的版本
+            2）如果暂存区没有版本，则用版本库里的版本替换工作区的版本。注意 -- 前后都有空格；
+            如果修改已经提交到暂存区，则无法撤销修改，只能撤销上次add之后的修改
 
 git restore --staged file.txt （等价于原 git reset HEAD file.txt 命令）		
-			用版本库中的版本替换暂存区中的版本，工作区不受影响
+                        用版本库中的版本替换暂存区中的版本，工作区不受影响
 
 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git restore file.txt
 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，
@@ -94,7 +94,7 @@ git pull origin <远程分支名称>:<本地分支名称>	将远程指定分支 
 git pull origin <远程分支名称>					将远程指定分支 拉取到 本地当前分支上
 git pull 						相当于 git fetch 和 git merge，如果分开进行，则可以用下面命令：
 $ git fetch origin master:tmp 	从远程的origin仓库的master分支下载到本地并新建一个分支temp
-								注意tmp不是一个track branch
+                                注意tmp不是一个track branch
 								
 $ git diff tmp 					比较master分支和temp分支的不同
 $ git merge tmp					合并temp分支到master分支
@@ -168,9 +168,9 @@ git branch -m old_name new_name		分支改名
 git branch -M old_name new_name		强制改名
 
 git cherry-pick	commit-number	把序号为commit-number的提交的修改复制到当前分支，也可以一次复制多个提交
-								注意：在使用前，必须确保当前分支的修改已经提交。
-								注意：会自动产生一个提交，这个提交与commit-number提交并不相同，
-								而只是把这个提交所做的改动复制过来
+                                注意：在使用前，必须确保当前分支的修改已经提交。
+                                注意：会自动产生一个提交，这个提交与commit-number提交并不相同，
+                                而只是把这个提交所做的改动复制过来
 
 把本地非master分支与远程分支建立关联：
 								
