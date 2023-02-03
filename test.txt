@@ -4,4 +4,5 @@ line 3 in dev to test rebase
 
 
 develop branch
+feature branch conflict test
 
